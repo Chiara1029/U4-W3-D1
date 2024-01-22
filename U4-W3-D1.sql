@@ -30,4 +30,4 @@
 -- SELECT clienti.regione_residenza, SUM(fatture.importo) as somma_importi FROM clienti JOIN fatture ON clienti.numero_cliente = fatture.id_cliente GROUP BY clienti.regione_residenza
 
 -- ESERCIZIO 11
-SELECT COUNT(DISTINCT numero_cliente) as numero_clienti FROM clienti JOIN fatture ON clienti.numero_cliente = fatture.id_cliente WHERE EXTRACT(YEAR FROM MAKE_DATE(clienti.anno_di_nascita, 1, 1)::date) = 1980 AND fatture.importo > '50'
+SELECT COUNT(DISTINCT numero_cliente) as numero_clienti FROM clienti JOIN fatture ON clienti.numero_cliente = fatture.id_cliente WHERE clienti.anno_di_nascita = 1980 AND fatture.importo > '50'
